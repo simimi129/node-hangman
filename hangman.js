@@ -20,15 +20,16 @@ console.log(`word: ${guessedLetters}, guesses left: ${guessesLeft}`);
 (async () => {
   while (true) {
     const guess = await question("Take a guess: ");
+    const normalizedGuess = guess.toLowerCase();
 
-    if (guess.length > 1) {
+    if (normalizedGuess.length > 1) {
       console.log("Please write one letter only");
       continue;
     }
 
-    if (wordArray.includes(guess)) {
+    if (wordArray.includes(normalizedGuess)) {
       wordArray.map((l, i) =>
-        l === guess ? (guessedLetters[i] = guess) : null
+        l === normalizedGuess ? (guessedLetters[i] = normalizedGuess) : null
       );
       if (!guessedLetters.includes("_")) {
         console.log("you've won");
