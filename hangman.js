@@ -17,10 +17,8 @@ function question(query) {
 
 console.log(`word: ${guessedLetters}, guesses left: ${guessesLeft}`);
 
-winOrLose = "";
-
 (async () => {
-  while (winOrLose === "") {
+  while (true) {
     const guess = await question("Take a guess: ");
 
     if (guess.length > 1) {
@@ -33,14 +31,12 @@ winOrLose = "";
         l === guess ? (guessedLetters[i] = guess) : null
       );
       if (!guessedLetters.includes("_")) {
-        winOrLose = "w";
         console.log("you've won");
         break;
       }
     } else {
       guessesLeft--;
       if (guessesLeft === 0) {
-        winOrLose = "l";
         console.log("you've lost");
         break;
       }
