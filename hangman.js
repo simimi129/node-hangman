@@ -9,7 +9,7 @@ const word = "testing";
 const wordArray = word.split("");
 
 const guessedLetters = new Array(wordArray.length).fill("_");
-let guessesLeft = 6;
+let guessesLeft = 5;
 
 function question(query) {
   return new Promise((resolve) => rl.question(query, resolve));
