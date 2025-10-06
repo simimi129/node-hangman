@@ -23,7 +23,7 @@ console.log(`word: ${guessedLetters}, guesses left: ${guessesLeft}`);
 
     if (guess.length > 1) {
       console.log("Please write one letter only");
-      return;
+      continue;
     }
 
     if (wordArray.includes(guess)) {
