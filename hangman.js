@@ -18,10 +18,7 @@ function colorize(text, color) {
     red: 31,
     green: 32,
     yellow: 33,
-    blue: 34,
-    magenta: 35,
     cyan: 36,
-    gray: 90,
   };
   const code = codes[color] || 0;
   return `\x1b[${code}m${text}\x1b[0m`;
